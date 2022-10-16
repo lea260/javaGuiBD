@@ -13,27 +13,6 @@ public class ClienteDao implements IPersona {
 	
 	
 
-	public boolean eliminarCliente(int id) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
-		Connection con = Conexion.getConexion();
-		boolean resultado = false;
-		try {
-			PreparedStatement ps = con.prepareStatement("delete from clientes where id=?");
-			ps.setInt(1, id);
-			ps.executeUpdate();
-		} catch (SQLException e) {
-			// TODO: handle exception
-		} finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return true;
-	}
 
 	@Override
 	public ArrayList<PersonaDto> listar() {
